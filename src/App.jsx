@@ -27,20 +27,23 @@ function ProtectedRoute({children}){
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
-      <Route exact path="/" element={<Layouts />}>
-        <Route index path="/home" element={<Home />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route
-          path="/checkout"
-          element={
-            <ProtectedRoute>
-              <Checkout />
-            </ProtectedRoute>
-          }
-        />
+      <Route path="/">
+        <Route element={<Layouts />}>
+          <Route index element={<Home />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route
+            path="/checkout"
+            element={
+              <ProtectedRoute>
+                <Checkout />
+              </ProtectedRoute>
+            }
+          />
+        </Route>
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
       </Route>
-      <Route path="/login" element={<Login />} />
-      <Route path="/register" element={<Register />} />
     </>
   )
 );

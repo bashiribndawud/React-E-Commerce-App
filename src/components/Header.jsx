@@ -74,13 +74,13 @@ function SearchBar() {
   const category = searchParams.get("category");
   const searchTerm = searchParams.get("searchTerm");
   const navigate = useNavigate();
-  console.log(selectedCategory);
+  // console.log(selectedCategory);
 
   useEffect(() => {
     setselectedCategory(category);
   }, [category]);
 
-  if (!categories.length) {
+  if (!categories?.length) {
     dispatch(getAllCategory());
   }
 
@@ -143,7 +143,7 @@ function SearchBar() {
           <MenuItem sx={{ textTransform: "capitalize" }} value="all">
             all
           </MenuItem>
-          {categories.map((category) => (
+          {categories?.map((category) => (
             <MenuItem
               sx={{ textTransform: "capitalize" }}
               key={category}
@@ -203,7 +203,7 @@ export default function Header() {
   const logout = async () => {
     await signUserOut();
     navigate("/login");
-  }
+  };
 
   const renderMenu = (
     <Menu

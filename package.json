@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "start": "vite --port 3000 --open"
+    "start": "vite --port 5000 --open"
   },
   "dependencies": {
     "@emotion/react": "^11.10.5",
